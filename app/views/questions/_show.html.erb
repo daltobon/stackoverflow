@@ -1,24 +1,13 @@
  <br>
  <hr>
-
- <h4>Pregunta # <%= @question.id %></h4>
+ <h4 class="alert alert-info text-center">Pregunta N° <b>0<%= @question.id %></b></h4>
  <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>TITLE</th>
-          <th>DESCRIPCION</th>
-          <th>VOTOS</th>      
-        </tr>
-      </thead>
+    <table class="table">
       <tbody>
-       <tr>
-          <th> <%= @question.id %></th>
-          <td><%= @question.title %> </td>
-          <td><%= @question.description %></td>
-          <td><%= @question.vote %></td>
-        </tr>
+      <td></td>
+      <td><%= @question.title %> </td>
+      <td><%= @question.description %><br> <small style="color: #E82C0C; font-style: bold">Publicado por: </small></td>
+    </tbody>      
       </tbody>
       </table>
   </div>
