@@ -1,0 +1,17 @@
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <hr>
+      <h1>Publicar Pregunta</h1>
+      <%= form_for @question do |f| %>
+        <div class="form-group">
+          <%= f.text_field :title, class: "form-control input-lg", placeholder: "Sobre que quieres preguntar..." %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :description, class: "form-control input-lg", placeholder: "Ingresa los detalles de tu pregunta" %>
+        </div>
+        <div>
+          <%= f.submit "Publicar", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>

@@ -10,16 +10,46 @@
 
   <body>
 
-	<nav class="nav nav-pills nav-justified nav-dark">
-	 <a class="nav-link active" href="#">Active</a>
-	 <a class="nav-link" href="#">StackOverFlow</a>
-	 <a class="nav-link" href="#">Ingresar</a>
-		  <a class="nav-link" href="#">Registrarse</a>
-	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed bg-dark">
+    <a class="navbar-brand" href="/">OverFlow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Más Vistas</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/questions/new">Nueva Pregunta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">SingUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active href="#">SingIn</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
   
   	<div class="container"> 
+  	<% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>
+    <% end %>
  	<%= yield %>
  	</div>
 
+ 	<hr> 	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+  <footer class="footer"> 
+ 	<h4 class="text-center">Todos los derechos reservados</h4>
+ 	</footer>
 </html>
