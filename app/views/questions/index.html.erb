@@ -1,14 +1,15 @@
-  <hr>
-  <h4 class="text-dark">Preguntas</h4>
+ <br>
+  <h4 class="">Preguntas</h4>
 
-  <table class="table table-xs">
+  <table class="table table-sm">
     <% @questions.each do |question| %>
    
     <tr> 
     <tbody>
-      <td> <%= question.vote %></td>
+
+      <td> <div class="text-center"> <%= question.vote %> <br> <small class="h-75 text-muted">Vote</small></div>  </td>
       <td> Respuestas </td>
-      <td> <%= link_to question.title, question_path(question) %> <h6>Publicado por: </h6></td>
+      <td> <%= link_to question.title, question_path(question) %><br> <small class="text-muted">Publicado por: </small></td>
      
       <% end %>
     </tbody>

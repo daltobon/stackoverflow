@@ -1,0 +1,24 @@
+ <br>
+ <hr>
+
+ <h4>Pregunta # <%= @question.id %></h4>
+ <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>DESCRIPCION</th>
+          <th>VOTOS</th>      
+        </tr>
+      </thead>
+      <tbody>
+       <tr>
+          <th> <%= @question.id %></th>
+          <td><%= @question.title %> </td>
+          <td><%= @question.description %></td>
+          <td><%= @question.vote %></td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
