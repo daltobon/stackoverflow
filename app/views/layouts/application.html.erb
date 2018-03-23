@@ -34,13 +34,14 @@
         <%= link_to("Salir", "/users/sign_out", :method => :delete, class: "nav-link text-rigth") %>
         <% end %>
         </li>
-      </ul>
+         </ul> 
 
-		<% if signed_in? %>
-		  <div class="text-white"><%= current_user.email %></div>
-		<% end %>
-
-      <form class="form-inline">
+      <% if signed_in? %>
+          <small class="text-white"> <%= current_user.email %> &nbsp &nbsp </small>
+        <% end %>
+      
+    
+      <form class="form-inline">        
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
       </form>
