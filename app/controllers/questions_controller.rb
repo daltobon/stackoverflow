@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+
+  before_action :authenticate_user!, :except => [:index, :show]
+
   def index
     @questions = Question.all
   end
@@ -34,10 +37,16 @@ class QuestionsController < ApplicationController
   end
 
   def delete
+    @question = Question.find(params[:id])
   end
 
   def destroy
-    
+    if @question.find(questions_params)
+      question.destroy
+      redirect_to question_path, notice: "Tu pregunta ha sido borrada"
+    else
+      render :delete, notice: "No se pudo actualizar el registro, intente de nuevo"
+    end
   end
 
   private

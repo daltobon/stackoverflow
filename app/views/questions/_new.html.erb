@@ -1,6 +1,6 @@
-  <% if signed_in? %> 
+<% if signed_in? %> 
 <div class="container">
-    <div class="align-items-center">
+    <div>
     <hr>
       <h1>Publicar Pregunta</h1>
       <%= form_for @question do |f| %>
@@ -17,9 +17,3 @@
     </div>
 </div>
 <% end %>
-
-<div class="text-center">
-<h4 class="alert alert-danger text-center">Lo sentimos, sólo los usuarios registrados pueden realizar preguntas</h4>
-<%= link_to("Registrate", "/users/sign_up" , class: "text-danger h1") %>
-<h6>Puedes ver la lista de preguntas <%= link_to("Aquí", "/" , class: "text-success") %></h6>
-</div>

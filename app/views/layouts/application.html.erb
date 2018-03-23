@@ -46,14 +46,17 @@
       </form>
     </div>
   </nav>
-  
-  	<div class="container"> 
-  	<% if flash[:notice] %>
+
+  <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
     <% end %>
+  
+  	<div class="container"> 
+  	<div class="justify-content-md-center">
     <br>
  	<%= yield %>
- 	</div>	
+ 	</div>
+ 	</div>
 		
   </body>
   <br>
@@ -66,3 +69,4 @@
   </section>
   
 </html>
+ 
