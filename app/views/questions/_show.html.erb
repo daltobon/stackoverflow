@@ -1,13 +1,16 @@
  <br>
  <hr>
  <h4 class="alert alert-info text-center">Pregunta N° <b>0<%= @question.id %></b></h4>
+ <div class="text-right"> <%= link_to "Editar", edit_question_url, class: 'btn btn-outline-info' %></div><br>
  <div class="table-responsive">
+
     <table class="table">
       <tbody>
-      <td></td>
-      <td><%= @question.title %> </td>
-      <td><%= @question.description %><br> <small style="color: #E82C0C; font-style: bold">Publicado por: </small></td>
-      <td> <%= <%= link_to("Edit", question_edit_path %> </td>
+      <tr><td class="h4"><%= @question.title %>  </td>
+      
+      </tr>      
+      <tr><td><%= @question.description %><br> <small style="color: #E82C0C; font-style: bold">Publicado por: </small></td></tr>      
+      
     </tbody>      
       </tbody>
       </table>
