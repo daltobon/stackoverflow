@@ -36,10 +36,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def delete
-    @question = Question.find(params[:id])
-  end
-
   def destroy
     if @question.find(questions_params)
       question.destroy
@@ -55,3 +51,4 @@ class QuestionsController < ApplicationController
     end
 
 end
+

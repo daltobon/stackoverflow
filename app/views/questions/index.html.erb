@@ -13,7 +13,7 @@
       <td> <div class="text-center"><span class="glyphicon glyphicon-chevron-up"></span><%= question.vote %> <br> <small class="h-75 text-muted">Vote</small><span class="glyphicon glyphicon-chevron-down"></span></div>  </td>
       <td> Respuestas </td>
       <td> <%= link_to question.title, question_path(question) %><br> <small style="color: #E82C0C; font-style: bold">Publicado por: </small></td>
-      <td>  <%= link_to "Eliminar", question_path(@question), :data => {:confirm => "¿Estas Seguro?",:method => "delete"} %> </td>
+      
       <% end %>
     </tbody>
     </tr>
