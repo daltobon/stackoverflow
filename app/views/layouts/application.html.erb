@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Overflow</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  
+
+<head>
+  <title>Overflow</title>
+
+  <!--CDN Ionic Framework-->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark fixed bg-dark">
-    <img class="img-fluid img-thumbnail rounded-circle" src="/icon.png" alt="logo" style="width: 50px; ">
-    <%= link_to "OverFlow", "/", class: 'h3 nav-link active text-white' %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Más Vistas</a>
-        </li>
+  <img class="img-fluid img-thumbnail rounded-circle" src="/icon.png" alt="logo" style="width: 50px; ">
+  <%= link_to "OverFlow", "/", class: 'h3 nav-link active text-white' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Más Vistas</a>
+      </li>
       <li class="nav-item">
-            
-        <% if signed_in? %>         
-           <%= link_to("Salir", "/users/sign_out", :method => :delete, class: "nav-link active text-right") %>
-        <% else %>
-        <li>
-         <%= link_to("Ingresar", "/users/sign_in", class: "nav-link active text-right") %>
-        </li>
-          
-        <li>
-         <%= link_to("Registrarse", "/users/sign_up", class: "nav-link active text-right") %>
-        </li>         
-        <% end %>
+        <% if signed_in? %>
+        <%= link_to("Salir", "/users/sign_out", :method => :delete, class: "nav-link active text-right") %>
         
       </li>
-         </ul> 
-        <% if signed_in? %>
-          <small class="text-white"> <%= current_user.email %> &nbsp &nbsp </small>
-        <% end %>     
-        <form class="form-inline">        
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-  </nav>
-    <% if flash[:notice] %>
-      <div class="alert alert-success text-center"><%= flash[:notice] %></div>
-    <% end %>
-  <div class="container"> 
-      <div class="justify-content-md-center">
-        <br>
-     	    <%= yield %>
-     	</div>
-    </div>
-  </body>
-    <br>
+      <% else %>
+      <li>
+       <%= link_to("Ingresar", "/users/sign_in", class: "nav-link active text-right") %>
+     </li>
+     <li>
+       <%= link_to("Registrarse", "/users/sign_up", class: "nav-link active text-right") %>
+     </li>         
+     <% end %>
+   </ul> 
+   <% if signed_in? %>
+   <small class="text-white"> <%= current_user.email %> &nbsp &nbsp </small>
+   <% end %>     
+   <form class="form-inline">        
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
 
-  <section class="bg-dark" style="height: 200px">  <!--pendiente-->
+<!--FLASH NOTICE-->
+<% if flash[:notice] %>
+<div class="alert alert-info text-center"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="container"> 
+  <div class="justify-content-md-center">
     <br>
-    <footer"> 
-     	<h4 class="text-center text-white">Todos los derechos reservados</h4>
-    </footer>
-  </section>  
-    
+    <%= yield %>
+  </div>
+</div>
+<section class="bg-dark" style="height: 200px">  <!--pendiente-->
+  <br>
+  <footer> 
+    <h4 class="text-center text-white">Todos los derechos reservados</h4>
+  </footer>
+</section>  
+</body>
+
 </html>
- 

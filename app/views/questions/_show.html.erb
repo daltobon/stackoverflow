@@ -1,17 +1,30 @@
  <br>
  <hr>
- <h4 class="alert alert-info text-center">Pregunta N° <b>0<%= @question.id %></b></h4>
- <div class="text-right"> <%= link_to "Editar", edit_question_url, class: 'btn btn-outline-info' %></div><br>
- <div class="table-responsive">
+ <h5 class="card card-footer bg-info text-white text-center">Pregunta <%= @question.id %></h5>
+ <div class="text-right"> 
+ 	<%= link_to "Editar", edit_question_url, class: 'btn btn-outline-info' %>
+ </div><br>
 
-    <table class="table">
-      <tbody>
-      <tr><td class="h4"><%= @question.title %>  </td>
-      
-      </tr>      
-      <tr><td><%= @question.description %><br> <small style="color: #E82C0C; font-style: bold">Publicado por: </small></td></tr>      
-      
-    </tbody>      
-      </tbody>
-      </table>
-  </div>
+ <div class="table-responsive">
+ 	<table class="table">
+ 		<tbody>
+ 			<tr>
+ 				<td> 
+ 					<div class="text-muted  text-center h6"> 
+ 						<i class="ion-arrow-up-b"></i><br>
+ 						<%= @question.vote %> <br><i class="ion-arrow-down-b"></i><br>
+ 						<small class="h-50 text-success text-center">Vote</small>
+ 					</div>  
+ 				</td>
+ 				<td>
+ 					<h3><%= @question.title %></h3>      	
+ 					<div>
+ 						<p class="h6"><%= @question.description %><small style="color: #FF7F50; font-style: bold">Publicado por:</small></p></div>
+
+ 					</td>
+ 				</tr>         
+ 			</tbody>      
+ 		</table>
+ 	</div>
+
+

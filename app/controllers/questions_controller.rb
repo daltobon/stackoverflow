@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create(questions_params)
+    @question.user = current_user
     if @question.save
       redirect_to question_path(@question), notice: "Pregunta publicada exitosamente"
     else
@@ -24,11 +25,11 @@ class QuestionsController < ApplicationController
   end
   
   def edit
-     @question = Question.find(params[:id])
+   @question = Question.find(params[:id])
   end
 
   def update
-    @question = Question.find(params[:id])
+      @question = Question.find(params[:id])
     if @question.update(questions_params)
       redirect_to question_path(@question), notice: "Tu pregunta ha sido actualizada"
     else
@@ -36,19 +37,17 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def destroy
-    if @question.find(questions_params)
-      question.destroy
-      redirect_to question_path, notice: "Tu pregunta ha sido borrada"
-    else
-      render :delete, notice: "No se pudo actualizar el registro, intente de nuevo"
-    end
-  end
+def destroy
+  question = Question.find(params[:id])
+  question.destroy
 
-  private
-      def questions_params
-        params.require(:question).permit(:title, :description, :vote, :id)
-    end
+  redirect_to questions_path, notice: "Tu pregunta ha sido borrada"
+end
+
+private
+def questions_params
+  params.require(:question).permit(:title, :description, :vote, :id)
+end
 
 end
 
